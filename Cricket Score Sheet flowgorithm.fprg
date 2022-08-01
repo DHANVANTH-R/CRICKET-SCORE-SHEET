@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="sathya prasad"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-02 04:18:47 PM"/>
+        <attribute name="created" value="c2F0aHlhIHByYXNhZDtERVNLVE9QLTJBTzM4UEI7MjAyMS0wMS0zMTsxMDo0MToyOCBBTTszNjAy"/>
+        <attribute name="edited" value="c2F0aHlhIHByYXNhZDtERVNLVE9QLTJBTzM4UEI7MjAyMS0wMS0zMTsxMTowMDozOSBBTTsyO3NhdGh5YSBwcmFzYWQ7REVTS1RPUC0yQU8zOFBCOzIwMjEtMDEtMzE7MTA6MTY6MzYgQU07NzM3MQ=="/>
+        <attribute name="edited" value="c2F0aHlhIHByYXNhZDtERVNLVE9QLTJBTzM4UEI7MjAyMS0wMS0zMTswOTowMzoxMSBQTTsxO3NhdGh5YSBwcmFzYWQ7REVTS1RPUC0yQU8zOFBCOzIwMjEtMDEtMjk7MDI6MDM6MzUgUE07UXVlc3Rpb24gMS5mcHJnOzg4NzY="/>
+        <attribute name="edited" value="c2F0aHlhIHByYXNhZDtERVNLVE9QLTJBTzM4UEI7MjAyMS0wMi0wMjswNDoxODo0NyBQTTsxODszNzg4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Welcome to the IPL &quot;" newline="True"/>
+            <declare name="k" type="Integer" array="False" size=""/>
+            <assign variable="k" expression="0"/>
+            <do expression="k==1">
+                <declare name="choice" type="Integer" array="False" size=""/>
+                <output expression="&quot;Enter the choice u needed &#13;&#10;1.New Score Sheet&#13;&#10;2.View Score Sheet&#13;&#10;3.Exit&quot;" newline="True"/>
+                <input variable="choice"/>
+                <if expression="choice==1">
+                    <then>
+                        <call expression="New"/>
+                    </then>
+                    <else>
+                        <if expression="choice==2">
+                            <then>
+                                <call expression="View"/>
+                            </then>
+                            <else>
+                                <if expression="choice==3">
+                                    <then>
+                                        <call expression="Exit"/>
+                                    </then>
+                                    <else>
+                                        <call expression="Invalid"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;If You Want To Continue Press 1 Or Else Press 2&quot;" newline="True"/>
+                <input variable="k"/>
+            </do>
+        </body>
+    </function>
+    <function name="Exit" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;You are Exited from the program&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="Invalid" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Invalid Entry&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="New" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name, Player, Team, Team1, venue" type="String" array="False" size=""/>
+            <declare name="i, n, choice, score1, score2, a, b" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the name of the score sheet&quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;Enter the Venue of the Match&quot;" newline="True"/>
+            <input variable="Venue"/>
+            <output expression="&quot;Enter the Name of the Team Vs Team&quot;" newline="True"/>
+            <input variable="Team"/>
+            <output expression="&quot;Enter the Toss Winner Team&quot;" newline="True"/>
+            <input variable="Team1"/>
+            <output expression="&quot;Choice elected by Toss winner team&#13;&#10;1.Bating &#13;&#10;2.Bowling&quot;" newline="True"/>
+            <input variable="choice"/>
+            <output expression="&quot;Enter the number of cricket players of team1&quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="arr" type="String" array="True" size="n"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot;Enter the Player name at position&quot; &amp;i" newline="True"/>
+                <input variable="arr[i]"/>
+            </for>
+            <output expression="&quot;Enter the number of cricket players of team2&quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="arr2" type="String" array="True" size="n"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot;Enter the Player name at position&quot; &amp;i" newline="True"/>
+                <input variable="arr2[i]"/>
+            </for>
+            <output expression="&quot;Enter the wickets of team1&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Enter the wickets of team2&quot;" newline="True"/>
+            <input variable="b"/>
+            <output expression="&quot;Enter the Score of Team 1&quot;" newline="True"/>
+            <input variable="score1"/>
+            <output expression="&quot;Enter the score of Team 2&quot;" newline="True"/>
+            <input variable="score2"/>
+            <if expression="score1&gt;score2">
+                <then>
+                    <output expression="&quot;The score of team 1 is:&quot;&amp; score1" newline="True"/>
+                    <output expression="&quot;The score of team 2 is:&quot;&amp; score2" newline="True"/>
+                    <output expression="&quot;Team1 is the winner of the match&quot;" newline="True"/>
+                    <output expression="&quot;The wickets of team1 is &quot; &amp;a" newline="True"/>
+                    <output expression="&quot;The wickets of team2 is &quot;&amp;b" newline="True"/>
+                </then>
+                <else>
+                    <if expression="score2&gt;score1">
+                        <then>
+                            <output expression="&quot;The score of team 1 is:&quot;&amp; score1" newline="True"/>
+                            <output expression="&quot;The score of team 2 is:&quot;&amp; score2" newline="True"/>
+                            <output expression="&quot;Team2 is the winner of the match&quot;" newline="True"/>
+                            <output expression="&quot;The wickets of team1 is &quot; &amp;a" newline="True"/>
+                            <output expression="&quot;The wickets of team2 is &quot;&amp;b" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="score1==score2">
+                                <then>
+                                    <if expression="a&gt;b">
+                                        <then>
+                                            <output expression="&quot;The score of team 1 is:&quot;&amp; score1" newline="True"/>
+                                            <output expression="&quot;The score of team 2 is:&quot;&amp; score2" newline="True"/>
+                                            <output expression="&quot;Team2 won less number of wickets&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="b&gt;a">
+                                                <then>
+                                                    <output expression="&quot;The score of team 1 is:&quot;&amp; score1" newline="True"/>
+                                                    <output expression="&quot;The score of team 2 is:&quot;&amp; score2" newline="True"/>
+                                                    <output expression="&quot;Team1 Won by less number of wickets&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="a==b">
+                                                        <then>
+                                                            <output expression="&quot;This is a DRAW Match as scores and wickets are equal&quot;" newline="True"/>
+                                                        </then>
+                                                        <else/>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Error&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="View" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="score, num" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter which u wanted to view&#13;&#10;1.Scores of matches  &#13;&#10;2.Winner of Matches&#13;&#10;3.Which Team won CUP in which year&quot;" newline="True"/>
+            <input variable="num"/>
+            <if expression="num==1">
+                <then>
+                    <declare name="flag" type="Integer" array="False" size=""/>
+                    <output expression="&quot;Enter the team which you wanted the score&#13;&#10;1.CSK/RCB&#13;&#10;2.RCB/MI&#13;&#10;3.MI/SRH&#13;&#10;4.KXIP/DC&#13;&#10;5.RR/KKR&quot;" newline="True"/>
+                    <input variable="flag"/>
+                    <if expression="flag==1">
+                        <then>
+                            <output expression="&quot;Csk:240-2 Rcb:236-4&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="flag==2">
+                                <then>
+                                    <output expression="&quot;RCB:250-6 MI:270-6&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="flag==3">
+                                        <then>
+                                            <output expression="&quot;Srh: 140-6 MI:240-8&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="flag==4">
+                                                <then>
+                                                    <output expression="&quot;KXIP: 210-7 DC:199-8&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="flag==5">
+                                                        <then>
+                                                            <output expression="&quot;RR:180-8 KKR:184-9&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;Error&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="num==2">
+                        <then>
+                            <declare name="count" type="Integer" array="False" size=""/>
+                            <output expression="&quot;Enter the choice u wanted to know the winner&#13;&#10;1.CSK/RCB&#13;&#10;2.RCB/MI&#13;&#10;3.MI/SRH&#13;&#10;4.KXIP/DC&#13;&#10;5.RR/KKR&quot;" newline="True"/>
+                            <input variable="count"/>
+                            <if expression="count==1">
+                                <then>
+                                    <output expression="&quot;Csk Won aganist Rcb&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="count==2">
+                                        <then>
+                                            <output expression="&quot;MI Won against Rcb&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="count==3">
+                                                <then>
+                                                    <output expression="&quot;MI Won aganist Srh&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="count==4">
+                                                        <then>
+                                                            <output expression="&quot;KXIP Won Aganist DC&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="count==5">
+                                                                <then>
+                                                                    <output expression="&quot;RR Won aganist KKR&quot;" newline="True"/>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;ERROR&quot;" newline="True"/>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="num==3">
+                                <then>
+                                    <declare name="year" type="Integer" array="False" size=""/>
+                                    <output expression="&quot;1)2016&#13;&#10;2)2017&#13;&#10;3)2018&#13;&#10;4)2019&#13;&#10;5)2020&quot;" newline="True"/>
+                                    <input variable="year"/>
+                                    <if expression="year==1">
+                                        <then>
+                                            <output expression="&quot;Srh Won the Cup in 2016&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="year==2">
+                                                <then>
+                                                    <output expression="&quot;MI Won the Cup in Year 2017&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="year==3">
+                                                        <then>
+                                                            <output expression="&quot;CSK Won the Cup in 2018&quot;" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="year==4">
+                                                                <then>
+                                                                    <output expression="&quot;MI Won the Cup in Year 2019&quot;" newline="True"/>
+                                                                </then>
+                                                                <else>
+                                                                    <if expression="year==5">
+                                                                        <then>
+                                                                            <output expression="&quot;MI Won the Cup in Year 2020&quot;" newline="True"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <output expression="&quot;Invalid Entry&quot;" newline="True"/>
+                                                                        </else>
+                                                                    </if>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Error&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
